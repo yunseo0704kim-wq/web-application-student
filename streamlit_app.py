@@ -27,34 +27,32 @@ def main():
     )
 
     st.write("---")
-    button_col1, button_col2 = st.columns(2)
-    with button_col1:
-        st.markdown(
-            "<a href='/1_도형의_합동' style='text-decoration:none;'>"
-            "<div style='background:#0d6efd; color:#ffffff; padding:16px; border-radius:12px; text-align:center; font-weight:600;'>"
-            "[1단계] 완벽한 쌍둥이, 합동 투어 ➔"
-            "</div></a>",
-            unsafe_allow_html=True,
-        )
-    with button_col2:
-        if st.button("[2단계] 반짝반짝 거울 마법, 선대칭 탐험 ➔"):
-            st.session_state.page = "symmetry"
+    st.write("아래에서 원하는 페이지를 골라서 다음 학습으로 넘어가 보세요.")
 
-    if "page" not in st.session_state:
-        st.session_state.page = None
+    page_cols = st.columns(3)
+    page_cols[0].markdown(
+        "<a href='/1_도형의_합동' style='text-decoration:none;'>"
+        "<div style='background:#0d6efd; color:#ffffff; padding:18px; border-radius:14px; text-align:center; font-weight:700;'>"
+        "[1단계] 완벽한 쌍둥이, 합동 투어 ➔"
+        "</div></a>",
+        unsafe_allow_html=True,
+    )
+    page_cols[1].markdown(
+        "<a href='/2_선대칭도형' style='text-decoration:none;'>"
+        "<div style='background:#198754; color:#ffffff; padding:18px; border-radius:14px; text-align:center; font-weight:700;'>"
+        "3페이지<br>선대칭도형"
+        "</div></a>",
+        unsafe_allow_html=True,
+    )
+    page_cols[2].markdown(
+        "<a href='/3_퀴즈' style='text-decoration:none;'>"
+        "<div style='background:#dc3545; color:#ffffff; padding:18px; border-radius:14px; text-align:center; font-weight:700;'>"
+        "4페이지<br>최종 퀴즈"
+        "</div></a>",
+        unsafe_allow_html=True,
+    )
 
-    if st.session_state.page == "congruence":
-        st.header("🔹 1단계: 완벽한 쌍둥이, 합동 투어")
-        st.write("두 도형이 크기와 모양까지 같아서 서로 딱 맞는지 확인해보는 시간이에요.")
-        st.markdown("- 서로 겹쳤을 때 완전히 일치하면 합동이에요.")
-        st.markdown("- SSS, SAS, ASA처럼 간단한 판정 기준으로 확인해봐요.")
-    elif st.session_state.page == "symmetry":
-        st.header("🔸 2단계: 반짝반짝 거울 마법, 선대칭 탐험")
-        st.write("도형을 거울에 비추면 어떻게 보일지 상상해보세요.")
-        st.markdown("- 대칭선 기준으로 좌우가 완벽히 맞는지 확인해요.")
-        st.markdown("- 반사대칭과 회전대칭을 모두 탐험해봐요.")
-    else:
-        st.write("버튼을 눌러 원하는 마법 탐험을 시작해보세요!")
+    st.write("페이지 번호를 선택하여 다음 학습으로 바로 이동할 수 있어요.")
 
 
 if __name__ == "__main__":

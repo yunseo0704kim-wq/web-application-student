@@ -6,6 +6,21 @@ def main():
     st.title("📐 합동과 선대칭의 비밀을 풀자!")
     st.markdown("### 직접 돌리고 접어보며 완벽한 도형의 규칙을 찾아봐요!")
 
+    # 사이드바: 빠른 이동 링크
+    st.sidebar.title("학습 메뉴")
+    st.sidebar.markdown(
+        "<a href='/1_도형의_합동' style='text-decoration:none;'>[1단계] 완벽한 쌍둥이, 합동 투어 ➔</a>",
+        unsafe_allow_html=True,
+    )
+    st.sidebar.markdown(
+        "<a href='/2_선대칭도형' style='text-decoration:none;'>[2단계] 반짝반짝 거울 마법, 선대칭 탐험 ➔</a>",
+        unsafe_allow_html=True,
+    )
+    st.sidebar.markdown(
+        "<a href='/3_퀴즈' style='text-decoration:none;'>[3단계] 최종 퀴즈 ➔</a>",
+        unsafe_allow_html=True,
+    )
+    st.sidebar.write("여기에서 원하는 페이지로 빠르게 이동할 수 있어요.")
     st.markdown(
         """
         **오늘의 학습 목표:**
